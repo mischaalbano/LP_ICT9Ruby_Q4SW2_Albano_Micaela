@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LP_ICT9R_Q4SW2_Albano_Micaela</title>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #87CEEB; /* Sky Blue */
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #00008B; /* Dark Blue */
+    }
+    p {
+        text-align: center;
+        color: #00008B; /* Dark Blue */
+        margin-bottom: 20px;
+    }
+    input[type="number"] {
+        width: calc(50% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    button {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #output {
+        margin-top: 20px;
+        text-align: center;
+    }
+    /* Different button colors */
+    .addition {
+        background-color: #007bff; /* Blue */
+    }
+    .subtraction {
+        background-color: #4682b4; /* Steel Blue */
+    }
+    .multiplication {
+        background-color: #1e90ff; /* Dodger Blue */
+    }
+    .division {
+        background-color: #6495ed; /* Cornflower Blue */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Arithmetic Operator Webpage</h1>
+    <p>Enter two numbers below and click the corresponding operation button to perform arithmetic operations.</p>
+    <label for="id1">Enter first number:</label><br>
+    <input type="number" id="id1"><br>
+    <label for="id2">Enter second number:</label><br>
+    <input type="number" id="id2"><br>
+    <div class="button-container">
+        <button class="addition" onclick="Addition()">Addition</button>
+        <button class="subtraction" onclick="Subtraction()">Subtraction</button>
+    </div>
+    <div class="button-container">
+        <button class="multiplication" onclick="Compute()">Multiplication</button>
+        <button class="division" onclick="Divide()">Division</button>
+    </div>
+    <div id="output"></div>
+</div>
+
+<script type="text/javascript">
+    function Compute() {
+        num1 = document.getElementById('id1').value;
+        num2 = document.getElementById('id2').value;
+        product = num1 * num2;
+        document.getElementById('output').innerHTML = "Multiplication: " + product;
+    }
+    function Divide() {
+        num1 = document.getElementById('id1').value;
+        num2 = document.getElementById('id2').value;
+        if (num2 == 0) {
+            document.getElementById('output').innerHTML = "Division by zero is not allowed";
+            return;
+        }
+        quotient = num1 / num2;
+        document.getElementById('output').innerHTML = "Division: " + quotient;
+    }
+    function Subtraction() {
+        num1 = document.getElementById('id1').value;
+        num2 = document.getElementById('id2').value;
+        difference = num1 - num2;
+        document.getElementById('output').innerHTML = "Subtraction: " + difference;
+    }
+    function Addition() {
+        num1 = Number(document.getElementById('id1').value);
+        num2 = Number(document.getElementById('id2').value);
+        sum = num1 + num2;
+        document.getElementById('output').innerHTML = "Addition: " + sum;
+    }
+</script>
+</body>
+</html>
